@@ -1,36 +1,37 @@
-import { useState } from 'react'
+import { useState } from "react"
 
 
-function App() {
+const App = () => {
+  let [counter, setcounter] = useState(0)
 
-  let [counter, setcounter] = useState(5)
-
-  // let counter = 5
-
-  const addValue = () => {
-    if (counter < 20) {
-
-      counter = counter + 1
+  const addvalue = () => {
+    if (counter < 10) {
+      counter = counter + 1;
       setcounter(counter)
-      console.log(counter)
-
     }
-
   }
 
-  const removevalue = () => {
+  const subtravtvalue = () => {
     if (counter > 0) {
+
+
       counter = counter - 1
       setcounter(counter)
     }
   }
 
+  const reset = () => {
+    counter = 0
+    setcounter(counter)
+  }
+
   return (
     <>
-      <h1>chai aur react</h1>
-      <h2>counter value : {counter}</h2>
-      <button onClick={addValue}>add value</button>
-      <button onClick={removevalue}>remove value</button>
+      <h1>counter App</h1>
+      <h2>counter is :{counter}</h2>
+      <button onClick={addvalue}>addvalue</button>
+      <button onClick={subtravtvalue}>subtractvalue</button>
+      <button onClick={reset}>reset</button>
     </>
   )
 }
